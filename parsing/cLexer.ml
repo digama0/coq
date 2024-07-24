@@ -758,6 +758,7 @@ module MakeLexer (Diff : sig val mode : bool end)
 = struct
   type nonrec keyword_state = keyword_state
   type te = Tok.t
+  type ast = Tok.ast
   type 'c pattern = 'c Tok.p
   let tok_pattern_eq = Tok.equal_p
   let tok_pattern_strings = Tok.pattern_strings
@@ -768,6 +769,7 @@ module MakeLexer (Diff : sig val mode : bool end)
          let (tok, loc) = next_token ~diff_mode:Diff.mode ttree !cur_loc cs in
          cur_loc := after loc;
          Some (tok,loc))
+  let ast_to_string = Tok.ast_to_string
   let tok_match = Tok.match_pattern
   let tok_text = Tok.token_text
 

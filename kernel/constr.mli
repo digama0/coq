@@ -121,7 +121,7 @@ val mkLambda : Name.t Context.binder_annot * types * constr -> constr
 (** Constructs the product [let x = t1 : t2 in t3] *)
 val mkLetIn : Name.t Context.binder_annot * constr * types * constr -> constr
 
-(** [mkApp (f, [|t1; ...; tN|]] constructs the application
+(** [mkApp (f, [|t1; ...; tN|])] constructs the application
     {%html:(f t<sub>1</sub> ... t<sub>n</sub>)%}
     {%latex:$(f~t_1\dots f_n)$%}. *)
 val mkApp : constr * constr array -> constr
